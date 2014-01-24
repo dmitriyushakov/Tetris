@@ -25,6 +25,7 @@ private:
     int accelVar;
     bool gameDroped;
     bool complication;
+    bool _shadowEnabled;
     AdvancedTimer timer;
     GameProperties startProperties;
     void addFigure();
@@ -32,6 +33,7 @@ private:
     void setPaused(bool val);
     void fillField();
 public:
+    bool shadowEnabled();
     bool isGameOver();
     bool isRunned();
     bool isPaused();

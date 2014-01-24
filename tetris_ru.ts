@@ -53,26 +53,31 @@
     </message>
     <message>
         <location filename="customgamedlg.ui" line="121"/>
+        <source>Enable shadow</source>
+        <translation>Включить тень</translation>
+    </message>
+    <message>
+        <location filename="customgamedlg.ui" line="128"/>
         <source>Acceleration</source>
         <translation>Ускорение</translation>
     </message>
     <message>
-        <location filename="customgamedlg.ui" line="146"/>
+        <location filename="customgamedlg.ui" line="153"/>
         <source>Slower</source>
         <translation>Медленнее</translation>
     </message>
     <message>
-        <location filename="customgamedlg.ui" line="166"/>
+        <location filename="customgamedlg.ui" line="173"/>
         <source>Faster</source>
         <translation>Быстрее</translation>
     </message>
     <message>
-        <location filename="customgamedlg.ui" line="177"/>
+        <location filename="customgamedlg.ui" line="184"/>
         <source>Start</source>
         <translation>Начать</translation>
     </message>
     <message>
-        <location filename="customgamedlg.ui" line="184"/>
+        <location filename="customgamedlg.ui" line="191"/>
         <source>Cancel</source>
         <translation>Отмена</translation>
     </message>
@@ -80,17 +85,17 @@
 <context>
     <name>GameWidget</name>
     <message>
-        <location filename="gamewidget.cpp" line="130"/>
+        <location filename="gamewidget.cpp" line="167"/>
         <source>Score: </source>
         <translation>Счет: </translation>
     </message>
     <message>
-        <location filename="gamewidget.cpp" line="138"/>
+        <location filename="gamewidget.cpp" line="175"/>
         <source>Game Over</source>
         <translation>Конец игры</translation>
     </message>
     <message>
-        <location filename="gamewidget.cpp" line="140"/>
+        <location filename="gamewidget.cpp" line="177"/>
         <source>Pause</source>
         <translation>Пауза</translation>
     </message>

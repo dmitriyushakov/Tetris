@@ -15,6 +15,7 @@ GameEngine::GameEngine(QObject *parent) :
     startInterval=0;
     figCount=0;
     accelVar=0;
+    _shadowEnabled=false;
     gameDroped=false;
     complication=true;
     connect(&timer,SIGNAL(timeout()),this,SLOT(step()));
@@ -72,6 +73,10 @@ void GameEngine::fillField(){
     }
 }
 
+bool GameEngine::shadowEnabled(){
+    return _shadowEnabled;
+}
+
 bool GameEngine::isGameOver(){
     return _field->isOverflow();
 }
@@ -104,6 +109,7 @@ void GameEngine::startGame(GameProperties &prop){
 
     accelVar=prop.accelirationVar();
     _score=0;
+    _shadowEnabled=prop.shadowEnabled();
     complication=prop.complication();
     connect(_field,SIGNAL(cleared(int)),this,SLOT(clearedLines(int)));
     if(_cassete==0)_cassete=new FigureCassete();

@@ -9,7 +9,8 @@ enum CellType{
     OCell=4,
     SCell=5,
     TCell=6,
-    ZCell=7
+    ZCell=7,
+    ShadowCell=8
 };
 
 #endif // CELLTYPE_H

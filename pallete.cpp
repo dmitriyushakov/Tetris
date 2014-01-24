@@ -11,6 +11,7 @@ Pallete::Pallete()
     map.insert(SCell,QColor(0,204,0));
     map.insert(TCell,QColor(204,51,204));
     map.insert(ZCell,QColor(255,0,0));
+    map.insert(ShadowCell,QColor(50,50,50));
     map.insert(NoneCell,QColor(0,0,0,0));
 }
 

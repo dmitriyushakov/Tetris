@@ -33,6 +33,7 @@ void CustomGameDlg::onStart(){
     prop.setInterval(ui->intervalSpin->value()*1000);
     prop.setComplication(ui->complicationCheck->isChecked());
     prop.setAccelerationVar(210-ui->accelerationSlider->value());
+    prop.setShadowEnabled(ui->shadowCheck->isChecked());
 
     emit startNewGame(prop);
 

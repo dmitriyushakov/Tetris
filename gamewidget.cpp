@@ -104,6 +104,43 @@ void GameWidget::paintEvent(QPaintEvent *){
             }
         }
     }
+
+    if(engine->shadowEnabled()){
+        Figure *cFigure=field->figure();
+        int w=cFigure->width();
+        int h=cFigure->height();
+        int x=cFigure->x();
+        int ypos=-cFigure->height();
+
+        bool finded=false;
+        for(;ypos<=field->height()-cFigure->height();ypos++){
+            for(int yshift=0;yshift<h;yshift++){
+                for(int xshift=0;xshift<w;xshift++){
+                    if(field->getReal(x+xshift,ypos+yshift)!=NoneCell&&
+                            cFigure->get(xshift,yshift)){
+                        finded=true;
+                        break;
+                    }
+                }
+                if(finded)break;
+            }
+            if(finded)break;
+        }
+        ypos--;
+
+        for(int yshift=0;yshift<h;yshift++){
+            for(int xshift=0;xshift<w;xshift++){
+                if(cFigure->get(xshift,yshift)&&
+                        (field->get(xshift+x,yshift+ypos)==NoneCell)){
+                    QColor color=pallete->get(ShadowCell);
+                    QRectF rect(cellSize*(x+xshift)+1,cellSize*(ypos+yshift)+1,cellSize-2,cellSize-2);
+                    p.setBrush(QBrush(color));
+                    p.drawRoundedRect(rect,cellSize*0.2,cellSize*0.2);
+                }
+            }
+        }
+    }
+
     p.restore();
 
     p.drawRect(dispShift,dispShiftY,casseteSize,casseteSize);

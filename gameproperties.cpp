@@ -6,6 +6,7 @@ const int GameProperties::stdInterval=1000;
 const int GameProperties::stdFilling=0;
 const int GameProperties::stdAccelvar=150;
 const bool GameProperties::stdComplication=true;
+const bool GameProperties::stdShadowEnabled=false;
 
 GameProperties::GameProperties()
 {
@@ -15,6 +16,7 @@ GameProperties::GameProperties()
     _filling=stdFilling;
     _accelvar=stdAccelvar;
     _complication=stdComplication;
+    _shadowEnabled=stdShadowEnabled;
 }
 
 GameProperties::GameProperties(int width, int height){
@@ -24,13 +26,15 @@ GameProperties::GameProperties(int width, int height){
     _filling=stdFilling;
     _accelvar=stdAccelvar;
     _complication=stdComplication;
+    _shadowEnabled=stdShadowEnabled;
 }
 
 bool GameProperties::isStandart(){
     if(     _interval!=stdInterval ||
             _filling!=stdFilling ||
             _accelvar!=stdAccelvar ||
-            _complication!=stdComplication)return false;
+            _complication!=stdComplication ||
+            _shadowEnabled!=stdShadowEnabled)return false;
     if(_width==5&&_height==10)return true;
     if(_width==10&&_height==20)return true;
     if(_width==15&&_height==30)return true;
@@ -56,6 +60,10 @@ int GameProperties::filling(){
 
 bool GameProperties::complication(){
     return _complication;
+}
+
+bool GameProperties::shadowEnabled(){
+    return _shadowEnabled;
 }
 
 int GameProperties::accelirationVar(){
@@ -85,6 +93,10 @@ void GameProperties::setFilling(int filling){
 
 void GameProperties::setComplication(bool complication){
     _complication=complication;
+}
+
+void GameProperties::setShadowEnabled(bool enabled){
+    _shadowEnabled=enabled;
 }
 
 void GameProperties::setAccelerationVar(int val){
